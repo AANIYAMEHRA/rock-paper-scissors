@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <header>
+      <h1>✊ ✋ ✌️ Rock Paper Scissors</h1>
+      <p class="subtitle">Pick your move · Beat the machine</p>
+    </header>
+
+    <section class="scoreboard" aria-label="Scoreboard">
+      <div class="stat">
+        <span class="stat-label">You</span>
+        <span class="stat-value" id="playerScore">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Computer</span>
+        <span class="stat-value" id="computerScore">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Draws</span>
+        <span class="stat-value" id="drawScore">0</span>
+      </div>
+      <div class="stat streak" id="streakBox" title="Current win streak">
+        <span class="stat-label">Streak</span>
+        <span class="stat-value" id="streakScore">0</span>
+      </div>
+    </section>
+
+    <section class="arena" aria-label="Current round">
+      <div class="side">
+        <div class="side-label">You</div>
+        <div class="hand" id="playerHand" aria-live="off">❔</div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="side">
+        <div class="side-label">Computer</div>
+        <div class="hand" id="computerHand" aria-live="off">❔</div>
+      </div>
+    </section>
+
+    <div class="status" id="status" role="status" aria-live="polite">Make your move!</div>
+
+    <section class="buttons" aria-label="Choose your move">
+      <button class="choice-btn" data-choice="rock" aria-label="Rock">
+        <span class="icon">✊</span><span class="name">Rock (R)</span>
+      </button>
+      <button class="choice-btn" data-choice="paper" aria-label="Paper">
+        <span class="icon">✋</span><span class="name">Paper (P)</span>
+      </button>
+      <button class="choice-btn" data-choice="scissors" aria-label="Scissors">
+        <span class="icon">✌️</span><span class="name">Scissors (S)</span>
+      </button>
+    </section>
+
+    <p class="hint">Keys <kbd>R</kbd> <kbd>P</kbd> <kbd>S</kbd> to play</p>
+
+    <div class="actions">
+      <button class="btn" id="resetRoundBtn" type="button">Cancel round</button>
+      <button class="btn btn-danger" id="resetScoreBtn" type="button">Reset score</button>
+    </div>
+
+    <div class="history-title">Recent rounds</div>
+    <div class="history" id="history"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
